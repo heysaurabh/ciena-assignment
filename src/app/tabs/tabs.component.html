@@ -1,0 +1,11 @@
+<p-tabView (onChange)="onTabChange($event)">
+  <p-tabPanel header="Alarms">
+    <app-data-table [highlightRow]="true" [columns]="columns" [tableData]="getTableData('alarms')"></app-data-table>
+  </p-tabPanel>
+  <p-tabPanel header="Node Type">
+    <app-data-table [highlightRow]="true" [columns]="columns" [tableData]="getTableData('node_type')"></app-data-table>
+  </p-tabPanel>
+  <p-tabPanel [header]="getTabHeader(item)" *ngFor="let item of itemData.facets['condition-severity'];">
+    <app-data-table [highlightRow]="false" [columns]="columns" [tableData]="getTableData(item.key)"></app-data-table>
+  </p-tabPanel>
+</p-tabView>

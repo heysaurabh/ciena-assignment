@@ -1,0 +1,28 @@
+<p-overlayPanel #op [style]="{width: '450px'}">
+  <ng-template pTemplate>
+    <p-table [columns]="columns" [value]="bellIconData" [virtualRowHeight]="24">
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr style="height:24px">
+          <td *ngFor="let col of columns">
+            {{rowData[col.field]}}
+          </td>
+        </tr>
+      </ng-template>
+  </p-table>
+  </ng-template>
+</p-overlayPanel>
+
+<div class="p-d-flex p-p-3 header">
+  <span class="p-mr-4"><img src="../../favicon.ico"></span>
+  <span class="p-as-center">Blueplanet</span>
+  <span class="p-ml-auto p-mr-4 p-as-center">Welcome MyUserName</span>
+  <span class="p-overlay-badge p-mr-3 p-as-center">
+    <i class="pi pi-bell" style="font-size: 1.5em" (click)="op.toggle($event)"></i>
+    <span class="p-badge">{{bellIconData.length}}</span>
+  </span>
+  <span>
+    <i class="pi pi-user p-mr-3 p-as-center" style="font-size: 1.5em"></i>
+    <span class="divider"></span>
+  </span>
+  <button (click)="logout()" pButton label="Logout" icon="pi pi-power-off" class="p-button-link p-ml-4 p-mr-2"></button>
+</div>

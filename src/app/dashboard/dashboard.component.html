@@ -1,0 +1,22 @@
+<app-header></app-header>
+
+<p-toast position="top-center" key="tc"></p-toast>
+
+<div class="p-d-flex p-p-3">
+  <button pButton type="button" label="Home" class="p-button-text p-mr-2"></button>
+  <div class="p-ml-auto p-mr-2">
+    <p-menu #menu [popup]="true" [model]="items"></p-menu>
+    <button type="button" pButton icon="pi pi-angle-down" iconPos="right" label="Menu"
+      (click)="menu.toggle($event)"></button>
+  </div>
+  <button pButton type="button" label="Back" class="p-button-text"></button>
+</div>
+
+<div class="p-d-flex p-p-3">Alarms Views</div>
+
+<div class="p-d-flex p-p-3">
+  <app-tabs></app-tabs>
+</div>
+<div class="p-d-flex p-p-3">
+  <app-severity-chart></app-severity-chart>
+</div>
